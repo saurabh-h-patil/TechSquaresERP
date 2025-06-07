@@ -62,7 +62,7 @@ const Footer = () => {
             <li className="flex items-center gap-2">
               <FaLinkedin className="text-blue-500" />
               <a
-                href="https://www.linkedin.com/company/techsquareerp"
+                href="https://www.linkedin.com/company/tech-square-erp"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white"
