@@ -4,6 +4,9 @@ import "./App.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import WhyChooseUs from "./pages/WhyChooseUs";
+import OdooImplementation from "./pages/OdooImplementation";
+import Services from "./pages/Services";
 
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -32,17 +35,26 @@ function App() {
   };
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Router>
         <Nav />
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/contact" element={<Contact />}></Route>
-        </Routes>
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/why-choose-us" element={<WhyChooseUs />} />
+            <Route
+              path="/odoo-implementation"
+              element={<OdooImplementation />}
+            />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
         <Footer />
       </Router>
 
+      {/* Floating Action Buttons */}
       <div className="fixed bottom-6 right-4 flex flex-col items-center gap-3 z-50">
         <a
           href="https://wa.me/8208103515"
@@ -69,7 +81,7 @@ function App() {
           </button>
         )}
       </div>
-    </>
+    </div>
   );
 }
 

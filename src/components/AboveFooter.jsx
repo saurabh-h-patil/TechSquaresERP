@@ -14,7 +14,7 @@ const AboveFooter = () => {
 
       {/* Content */}
       <div className="relative z-20 px-6">
-        <p className="text-gray-300 text-sm md:text-base mb-2 tracking-wider">
+        <p className="text-gray-300 text-md md:text-base mb-2 tracking-wider">
           Contact us for your Odoo ERP needs – we're here to help!
         </p>
         <h2 className="head text-4xl md:text-6xl font-extrabold text-white my-12">

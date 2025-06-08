@@ -1,11 +1,11 @@
 import React from "react";
 
-const Contact = () => {
+const Services = () => {
   return (
     <section
       className="mt-[96px] relative h-[25vh] bg-center bg-cover flex items-center justify-center text-center"
       style={{
-        backgroundImage: `url('/contact.jpg')`,
+        backgroundImage: `url('/services.jpg')`,
       }}
     >
       {/* Overlay */}
@@ -14,11 +14,11 @@ const Contact = () => {
       {/* Content */}
       <div className="relative z-20 px-6">
         <h2 className="head text-4xl md:text-6xl font-extrabold text-white my-12">
-          Contact Us
+          Our Services
         </h2>
       </div>
     </section>
   );
 };
 
-export default Contact;
+export default Services;

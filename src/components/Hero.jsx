@@ -131,7 +131,10 @@ const TechSquareHero = () => {
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
 
-              <button className="cursor-pointer group flex items-center px-8 py-4 border-2 border-white/30 hover:border-white/60 text-white font-semibold rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
+              <button
+                onClick={() => navigate("/odoo-implementation")}
+                className="cursor-pointer group flex items-center px-8 py-4 border-2 border-white/30 hover:border-white/60 text-white font-semibold rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
+              >
                 <Play className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                 Watch Demo
               </button>

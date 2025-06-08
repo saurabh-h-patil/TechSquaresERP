@@ -26,7 +26,6 @@ const Navbar = () => {
   const closeDropdowns = () => setActiveDropdown(null);
 
   const serviceLinks = [
-    { name: "Odoo Implementation", path: "/services/#implementation" },
     { name: "Odoo Customization", path: "/services/#customization" },
     { name: "Odoo Integration", path: "/services/#integration" },
     { name: "Odoo Migration", path: "/services/#migration" },
@@ -37,6 +36,7 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
     { name: "Why Choose Us", path: "/why-choose-us" },
+    { name: "Odoo Implementation", path: "/odoo-implementation" },
   ];
 
   return (
