@@ -1,4 +1,9 @@
 import React from "react";
+import Odoo1 from "../components/Odoo1";
+import Odoo2 from "../components/Odoo2";
+import Odoo3 from "../components/Odoo3";
+import Odoo4 from "../components/Odoo4";
+import Odoo5 from "../components/Odoo5";
 
 const OdooImplementation = () => {
   return (
@@ -19,6 +24,12 @@ const OdooImplementation = () => {
           </h2>
         </div>
       </section>
+
+      <Odoo1 />
+      <Odoo2 />
+      <Odoo3 />
+      <Odoo4 />
+      <Odoo5 />
     </>
   );
 };

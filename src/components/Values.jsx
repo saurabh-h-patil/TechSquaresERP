@@ -21,7 +21,7 @@ const Values = () => {
         >
           <div className="w-full lg:w-1/2">
             <div className="mb-6">
-              <h3 className="head text-3xl font-semibold text-blue-700 mb-3">
+              <h3 className="head text-3xl font-semibold text-sky-700 mb-3">
                 Our Mission
               </h3>
               <p className="text-xl text-gray-700">

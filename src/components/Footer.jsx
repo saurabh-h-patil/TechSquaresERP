@@ -57,10 +57,10 @@ const Footer = () => {
             </li>
 
             <li className="flex items-center gap-2">
-              <FaEnvelope className="text-blue-400" /> contact@techsquareerp.com
+              <FaEnvelope className="text-sky-400" /> contact@techsquareerp.com
             </li>
             <li className="flex items-center gap-2">
-              <FaLinkedin className="text-blue-500" />
+              <FaLinkedin className="text-sky-500" />
               <a
                 href="https://www.linkedin.com/company/tech-square-erp"
                 target="_blank"
@@ -81,7 +81,7 @@ const Footer = () => {
           </p>
           <NavLink
             to="/contact"
-            className="inline-block bg-blue-700 hover:bg-blue-800 text-white px-5 py-2 rounded transition"
+            className="inline-block bg-sky-700 hover:bg-sky-800 text-white px-5 py-2 rounded transition"
           >
             Contact Us
           </NavLink>

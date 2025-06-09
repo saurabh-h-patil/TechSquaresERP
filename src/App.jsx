@@ -67,7 +67,7 @@ function App() {
 
         <a
           href="tel:+918208103515"
-          className="bg-blue-800 text-white p-3 rounded-full hover:scale-110 transition"
+          className="bg-sky-800 text-white p-3 rounded-full hover:scale-110 transition"
         >
           <FaPhoneAlt className="text-lg" />
         </a>
@@ -75,7 +75,7 @@ function App() {
         {showScroll && (
           <button
             onClick={scrollToTop}
-            className="bg-blue-800 text-white p-3 rounded-full hover:scale-110 transition"
+            className="bg-sky-800 text-white p-3 rounded-full hover:scale-110 transition"
           >
             <FaArrowUp className="text-lg" />
           </button>

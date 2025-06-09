@@ -5,7 +5,7 @@ import "aos/dist/aos.css";
 
 const features = [
   {
-    icon: <FaCogs className="text-blue-600 text-4xl mb-4" />,
+    icon: <FaCogs className="text-sky-600 text-4xl mb-4" />,
     title: "Custom Odoo Implementation",
     desc: "Deploy Odoo tailored to your exact business requirements for faster ROI.",
   },

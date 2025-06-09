@@ -126,7 +126,7 @@ const Contact = () => {
               </button>
               <button
                 type="submit"
-                className="ml-4 w-[10vw] cursor-pointer border border-blue-500 text-blue-500 px-6 py-2 hover:bg-blue-500 hover:text-white transition"
+                className="ml-4 w-[10vw] cursor-pointer border border-sky-500 text-sky-500 px-6 py-2 hover:bg-sky-500 hover:text-white transition"
               >
                 Send
               </button>

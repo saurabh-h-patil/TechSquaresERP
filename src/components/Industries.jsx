@@ -11,7 +11,7 @@ import {
 
 const industries = [
   {
-    icon: <FaIndustry className="text-5xl text-blue-600" />,
+    icon: <FaIndustry className="text-5xl text-sky-600" />,
     title: "Manufacturing",
     desc: "Automate workflows, manage inventory, and streamline production lines.",
   },

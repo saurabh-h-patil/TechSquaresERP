@@ -22,7 +22,7 @@ const AboveFooter = () => {
         </h2>
         <Link
           to="/contact"
-          className="inline-block bg-blue-800 hover:bg-blue-900 text-white px-8 py-3 rounded transition font-semibold tracking-wide"
+          className="inline-block bg-sky-800 hover:bg-sky-900 text-white px-8 py-3 rounded transition font-semibold tracking-wide"
         >
           CONTACT US
         </Link>

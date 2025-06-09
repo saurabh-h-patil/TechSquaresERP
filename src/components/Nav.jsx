@@ -68,8 +68,8 @@ const Navbar = () => {
                 key={link.name}
                 to={link.path}
                 className={({ isActive }) =>
-                  `text-black hover:text-blue-600 transition duration-300 ${
-                    isActive ? "font-semibold text-blue-600" : ""
+                  `text-black hover:text-sky-600 transition duration-300 ${
+                    isActive ? "font-semibold text-sky-600" : ""
                   }`
                 }
               >
@@ -80,9 +80,9 @@ const Navbar = () => {
             {/* Services Dropdown */}
             <div className="relative group">
               <button
-                className={`flex items-center text-black hover:text-blue-600 transition duration-300 ${
+                className={`flex items-center text-black hover:text-sky-600 transition duration-300 ${
                   activeDropdown === "services"
-                    ? "font-semibold text-blue-600"
+                    ? "font-semibold text-sky-600"
                     : ""
                 }`}
                 onClick={() => handleDropdownToggle("services")}
@@ -103,7 +103,7 @@ const Navbar = () => {
                   <NavLink
                     key={link.name}
                     to={link.path}
-                    className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-blue-500 transition duration-200"
+                    className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-sky-500 transition duration-200"
                     onClick={closeDropdowns}
                   >
                     {link.name}
@@ -125,7 +125,7 @@ const Navbar = () => {
 
             <NavLink
               to="/contact"
-              className="bg-blue-800 text-white px-5 py-2 rounded hover:bg-blue-900 transition"
+              className="bg-sky-800 text-white px-5 py-2 rounded hover:bg-sky-900 transition"
             >
               Talk to Our Experts
             </NavLink>
@@ -152,8 +152,8 @@ const Navbar = () => {
                 to={link.path}
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
-                  `block text-gray-700 py-2 px-2 rounded hover:text-blue-600 transition ${
-                    isActive ? "text-blue-600 font-semibold" : ""
+                  `block text-gray-700 py-2 px-2 rounded hover:text-sky-600 transition ${
+                    isActive ? "text-sky-600 font-semibold" : ""
                   }`
                 }
               >
@@ -171,7 +171,7 @@ const Navbar = () => {
                       : "mobile-services"
                   )
                 }
-                className="flex justify-between w-full items-center py-2 text-gray-700 hover:text-blue-600"
+                className="flex justify-between w-full items-center py-2 text-gray-700 hover:text-sky-600"
               >
                 Services
                 <FaAngleDown
@@ -189,7 +189,7 @@ const Navbar = () => {
                   <NavLink
                     key={link.name}
                     to={link.path}
-                    className="block text-gray-600 hover:text-blue-500"
+                    className="block text-gray-600 hover:text-sky-500"
                     onClick={() => setIsOpen(false)}
                   >
                     {link.name}
@@ -212,7 +212,7 @@ const Navbar = () => {
             <NavLink
               to="/contact"
               onClick={() => setIsOpen(false)}
-              className="block w-full text-center bg-blue-800 text-white py-3 rounded hover:bg-blue-900 transition"
+              className="block w-full text-center bg-sky-800 text-white py-3 rounded hover:bg-sky-900 transition"
             >
               Talk to Our Experts
             </NavLink>

@@ -180,7 +180,7 @@ const TechSquareHero = () => {
                 <div className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="bg-blue-500/20 rounded-xl p-4 border border-blue-500/30">
-                      <div className="text-blue-300 text-sm mb-2">Revenue</div>
+                      <div className="text-sky-300 text-sm mb-2">Revenue</div>
                       <div className="text-white text-2xl font-bold">$2.4M</div>
                       <div className="text-green-400 text-xs">↗ +23%</div>
                     </div>
