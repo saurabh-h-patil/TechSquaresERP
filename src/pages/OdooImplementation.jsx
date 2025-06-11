@@ -27,7 +27,7 @@ const OdooImplementation = () => {
 
       <Odoo1 />
       <Odoo2 />
-      <Odoo3 />
+      {/* <Odoo3 /> */}
       <Odoo4 />
       <Odoo5 />
     </>

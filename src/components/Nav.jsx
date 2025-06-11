@@ -8,7 +8,9 @@ import logo from "/logo.jpg";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [isOdooServicesOpen, setIsOdooServicesOpen] = useState(false);
+  const [isOtherServicesOpen, setIsOtherServicesOpen] = useState(false);
+  const [activeMobileDropdown, setActiveMobileDropdown] = useState(null);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -19,23 +21,25 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleDropdownToggle = (dropdown) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
-  };
-
-  const closeDropdowns = () => setActiveDropdown(null);
-
   const serviceLinks = [
+    { name: "Odoo Migration", path: "/services/#migration" },
     { name: "Odoo Customization", path: "/services/#customization" },
     { name: "Odoo Integration", path: "/services/#integration" },
-    { name: "Odoo Migration", path: "/services/#migration" },
+    { name: "Odoo Web/App Development", path: "/services/#development" },
+    { name: "Odoo Training", path: "/services/#training" },
     { name: "Support & Maintenance", path: "/services/#support" },
+  ];
+
+  const otherServices = [
+    { name: "Digital Marketing", path: "/services/#digital-marketing" },
+    { name: "Graphic Desiging", path: "/services/#graphic-designing" },
+    { name: "Web/App Development", path: "/services/#web-app-development" },
+    { name: "Automation Testing", path: "/services/#automation-testing" },
   ];
 
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Why Choose Us", path: "/why-choose-us" },
     { name: "Odoo Implementation", path: "/odoo-implementation" },
   ];
 
@@ -45,11 +49,7 @@ const Navbar = () => {
         isScrolled ? "shadow-md bg-white" : "bg-white"
       }`}
     >
-      <nav
-        className={`transition-all duration-300 ${
-          isScrolled ? "py-2" : "py-4"
-        }`}
-      >
+      <nav className={`transition-all duration-300 ${isScrolled ? "py-2" : "py-4"}`}>
         <div className="container mx-auto px-4 flex items-center justify-between">
           <NavLink to="/" onClick={() => setIsOpen(false)}>
             <div className="flex items-center space-x-2">
@@ -77,34 +77,34 @@ const Navbar = () => {
               </NavLink>
             ))}
 
-            {/* Services Dropdown */}
-            <div className="relative group">
+            {/* Odoo Services Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsOdooServicesOpen(true)}
+              onMouseLeave={() => setIsOdooServicesOpen(false)}
+            >
               <button
                 className={`flex items-center text-black hover:text-sky-600 transition duration-300 ${
-                  activeDropdown === "services"
-                    ? "font-semibold text-sky-600"
-                    : ""
+                  isOdooServicesOpen ? "font-semibold text-sky-600" : ""
                 }`}
-                onClick={() => handleDropdownToggle("services")}
-                onMouseEnter={() => setActiveDropdown("services")}
               >
-                Services
+                Odoo Services
                 <FaAngleDown className="ml-1" />
               </button>
               <div
                 className={`absolute left-0 mt-1 w-64 bg-white shadow-lg z-50 transition-all duration-200 ${
-                  activeDropdown === "services"
-                    ? "opacity-100 visible"
-                    : "opacity-0 invisible"
+                  isOdooServicesOpen ? "opacity-100 visible" : "opacity-0 invisible"
                 }`}
-                onMouseLeave={closeDropdowns}
               >
                 {serviceLinks.map((link) => (
                   <NavLink
                     key={link.name}
                     to={link.path}
                     className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-sky-500 transition duration-200"
-                    onClick={closeDropdowns}
+                    onClick={() => {
+                      setIsOdooServicesOpen(false);
+                      setIsOpen(false);
+                    }}
                   >
                     {link.name}
                   </NavLink>
@@ -112,16 +112,40 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* <a
-              href="/TechSquareERP_Brochure.pdf"
-              download
-              className="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700 transition"
+            {/* Other Services Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsOtherServicesOpen(true)}
+              onMouseLeave={() => setIsOtherServicesOpen(false)}
             >
-              <div className="flex items-center space-x-2">
-                <FaDownload />
-                <span>Download Brochure</span>
+              <button
+                className={`flex items-center text-black hover:text-sky-600 transition duration-300 ${
+                  isOtherServicesOpen ? "font-semibold text-sky-600" : ""
+                }`}
+              >
+                Other Services
+                <FaAngleDown className="ml-1" />
+              </button>
+              <div
+                className={`absolute left-0 mt-1 w-64 bg-white shadow-lg z-50 transition-all duration-200 ${
+                  isOtherServicesOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                }`}
+              >
+                {otherServices.map((link) => (
+                  <NavLink
+                    key={link.name}
+                    to={link.path}
+                    className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-sky-500 transition duration-200"
+                    onClick={() => {
+                      setIsOtherServicesOpen(false);
+                      setIsOpen(false);
+                    }}
+                  >
+                    {link.name}
+                  </NavLink>
+                ))}
               </div>
-            </a> */}
+            </div>
 
             <NavLink
               to="/contact"
@@ -161,28 +185,26 @@ const Navbar = () => {
               </NavLink>
             ))}
 
-            {/* Services (Mobile Dropdown) */}
+            {/* Services Dropdown (Mobile) */}
             <div>
               <button
                 onClick={() =>
-                  handleDropdownToggle(
-                    activeDropdown === "mobile-services"
-                      ? null
-                      : "mobile-services"
+                  setActiveMobileDropdown((prev) =>
+                    prev === "services" ? null : "services"
                   )
                 }
                 className="flex justify-between w-full items-center py-2 text-gray-700 hover:text-sky-600"
               >
-                Services
+                Odoo Services
                 <FaAngleDown
                   className={`transition-transform duration-200 ${
-                    activeDropdown === "mobile-services" ? "rotate-180" : ""
+                    activeMobileDropdown === "services" ? "rotate-180" : ""
                   }`}
                 />
               </button>
               <div
                 className={`pl-4 overflow-hidden transition-all duration-300 space-y-2 ${
-                  activeDropdown === "mobile-services" ? "max-h-64" : "max-h-0"
+                  activeMobileDropdown === "services" ? "max-h-64" : "max-h-0"
                 }`}
               >
                 {serviceLinks.map((link) => (
@@ -198,9 +220,44 @@ const Navbar = () => {
               </div>
             </div>
 
+            {/* Other Services Dropdown (Mobile) */}
+            <div>
+              <button
+                onClick={() =>
+                  setActiveMobileDropdown((prev) =>
+                    prev === "other-services" ? null : "other-services"
+                  )
+                }
+                className="flex justify-between w-full items-center py-2 text-gray-700 hover:text-sky-600"
+              >
+                Other Services
+                <FaAngleDown
+                  className={`transition-transform duration-200 ${
+                    activeMobileDropdown === "other-services" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              <div
+                className={`pl-4 overflow-hidden transition-all duration-300 space-y-2 ${
+                  activeMobileDropdown === "other-services" ? "max-h-64" : "max-h-0"
+                }`}
+              >
+                {otherServices.map((link) => (
+                  <NavLink
+                    key={link.name}
+                    to={link.path}
+                    className="block text-gray-600 hover:text-sky-500"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+
             <button
               onClick={() => {
-                handleDownloadBrochure();
+                // handleDownloadBrochure(); <-- implement this if needed
                 setIsOpen(false);
               }}
               className="w-full flex items-center justify-center bg-green-600 text-white py-3 rounded hover:bg-green-700 transition"
